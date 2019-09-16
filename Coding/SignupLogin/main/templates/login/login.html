@@ -1,0 +1,116 @@
+{#version 3#}
+{# {{ login_form }}就直接完成了表单内容的生成工作#}
+{#login_form这个名称来自在视图函数中生成的form实例的变量名#}
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}登录{% endblock %}
+{% block css %}<link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+
+            <form class='form-login' action="/login/" method="post">
+
+                {% if message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                {% endif %}
+                {% csrf_token %}
+                <h2 class="text-center">欢迎登录</h2>
+
+{#                {{ login_form }}#}
+
+                <div class="form-group">
+                    {{ login_form.username.label_tag }}
+                    {{ login_form.username}}
+                </div>
+                <div class="form-group">
+                    {{ login_form.password.label_tag }}
+                    {{ login_form.password }}
+                </div>
+
+                <button type="reset" class="btn btn-default pull-left">重置</button>
+                <button type="submit" class="btn btn-primary pull-right">提交</button>
+
+          </form>
+
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
+
+
+{#version 2#}
+{#通过{% extends 'base.html' %}继承了‘base.html’模板的内容；#}
+{#通过{% block title %}登录{% endblock %}设置了专门的title；#}
+{#通过block css引入了针对性的login.css样式文件；#}
+{#主体内容定义在block content内部#}
+{#添加了一个重置按钮。#}
+{##}
+{#{% extends 'base.html' %}#}
+{#{% load staticfiles %}#}
+{#{% block title %}登录{% endblock %}#}
+{#{% block css %}<link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="container">#}
+{#        <div class="col-md-4 col-md-offset-4">#}
+{##}
+{#            <form class='form-login' action="/login/" method="post">#}
+{#                {% if message %}#}
+{#                    <div class="alert alert-warning">{{ message }}</div>#}
+{#                {% endif %}#}
+{#                {% csrf_token %}#}
+{#                <h2 class="text-center">欢迎登录</h2>#}
+{#                <div class="form-group">#}
+{#                    <label for="id_username">用户名：</label>#}
+{#                    <input type="text" name='username' class="form-control" id="id_username" placeholder="Username" autofocus required>#}
+{#                </div>#}
+{#                <div class="form-group">#}
+{#                    <label for="id_password">密码：</label>#}
+{#                    <input type="password" name='password' class="form-control" id="id_password" placeholder="Password" required>#}
+{#                </div>#}
+{#                <button type="reset" class="btn btn-default pull-left">重置</button>#}
+{#                <button type="submit" class="btn btn-primary pull-right">提交</button>#}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#    </div> <!-- /container -->#}
+{#{% endblock %}#}
+
+
+{#version 1#}
+{#form标签主要确定目的地url和发送方#}
+{#p标签将各个输入框分行#}
+{#label标签为每个输入框提供一个前导提示，还有助于触屏使用#}
+{#placeholder属性为输入框提供默认值#}
+{#autofocus属性为用户名输入框自动聚焦#}
+{#required表示该输入框必须填写#}
+{#passowrd类型的input标签不会显示明文密码#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>登录</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#    <div style="margin: 15% 40%;">#}
+{#        <h1>欢迎登录！</h1>#}
+{#        <form action="/login/" method="post">#}
+{#            <p>#}
+{#                <label for="id_username">用户名：</label>#}
+{#                <input type="text" id="id_username" name="username" placeholder="用户名" autofocus required />#}
+{#            </p>#}
+{#            <p>#}
+{#                <label for="id_password">密码：</label>#}
+{#                <input type="password" id="id_password" placeholder="密码" name="password" required >#}
+{#            </p>#}
+{#        </form>#}
+{#    </div>#}
+{##}
+{#</body>#}
+{#</html>#}
+{##}

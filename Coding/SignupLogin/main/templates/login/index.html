@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    <div class="container">
+        {% if request.session.is_login %}
+            <h2> 嗨 ( • ̀ω•́ )✧ ~ {{ request.session.user_name }} </h2>
+            <h2>今天你想记录下哪些路线行程？</h2>
+        {% else %}
+        <h2> 你尚未登录，只能访问首页介绍 </h2>
+        {% endif %}
+    <h2> </h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0">
+                <div class="thumbnail">
+                    <img src="/media/photo/index/test.png"  style="width:100%">
+                    <div class="caption">
+                        <h3>路线地图展示界面</h3>
+                        <p>您可以在地图上直观地查看过去的路线轨迹，迅速定位经纬度坐标。</p>
+                        <p>单击点位，您将得到点位所在的周边照片集合，并能进一步获取点位的详细信息。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/(1).png"  style="width:100%">
+                    <div class="caption">
+                        <h3>注册界面</h3>
+                        <p>如果您尚未拥有账户，请点击右上角的注册按钮进行注册。</p>
+                        <p>按常理，您的邮箱将会收到一封验证邮件，点击邮件内的链接即可完成注册。</p>
+                        <p>但是关于邮件的部分，程序员懒得去申请服务，就没有实现。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/(2).png"  style="width:100%">
+                    <div class="caption">
+                        <h3>登录界面</h3>
+                        <p>按常理，如果忘记密码的话，您可以通过邮箱验证等方式重设密码。</p>
+                        <p>但是同样因为程序员怕麻烦没实现。如果您忘记密码，数据对您而言不复存在。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/(3).png"  style="width:100%">
+                    <div class="caption">
+                        <h3>路线列表界面（空）</h3>
+                        <p>您可以单击右上角的按钮添加新的路线。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/7.png"  style="width:100%">
+                    <div class="caption">
+                        <h3>添加路线界面</h3>
+                        <p>我没什么可说的，按照要求填写，不然会要求你重新提交。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/(4).png"  style="width:100%">
+                    <div class="caption">
+                        <h3>路线列表界面</h3>
+                        <p>读万卷书不如行万里路，这是暑期实习的路线。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/(5).png"  style="width:100%">
+                    <div class="caption">
+                        <h3>路线详情界面</h3>
+                        <p>每一段路线，都有一段故事。</p>
+                        <p>但是，每一段路线，不一定有一堆点位——你打过点才有。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/8.png"  style="width:100%">
+                    <div class="caption">
+                        <h3>添加点位界面</h3>
+                        <p>点位是这么添加的。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/(6).png"  style="width:100%">
+                    <div class="caption">
+                        <h3>点位周边照片界面</h3>
+                        <p>同样，照片只有添加了才有。</p>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="/media/photo/index/9.png"  style="width:100%">
+                    <div class="caption">
+                        <h3>添加照片界面</h3>
+                        <p>照片是这么添加的，照片添加有个bug我还没改好，但是一般看不出来。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
